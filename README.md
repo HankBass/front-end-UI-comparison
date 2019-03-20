@@ -39,7 +39,7 @@
 | 国际化 |  兼容[vue-i18n@5.x](https://github.com/kazupon/vue-i18n) | vue-i18n | 支持 |
 | 插件 | [Element](https://github.com/ElementUI/vue-cli-plugin-element) | [iview](https://github.com/iview/vue-cli-plugin-iview) | [ant-design-vue](https://github.com/vueComponent/vue-cli-plugin-ant-design) |
 
-    ------------------------------------------
+------------------------------------------
 
 ### 功能对比
 #### 体积
