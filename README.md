@@ -6,11 +6,11 @@
 
 ### 简述
 
-**element-ui** Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库[element-ui](https://github.com/ElemeFE/element)。
+**[element-ui](https://github.com/ElemeFE/element)** ：Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库。
 
-**iview** iView 是一套基于 Vue.js 的开源 UI 组件库，主要服务于 PC 界面的中后台产品[iview](https://github.com/iview/iview)。
+**[iview](https://github.com/iview/iview)** ：iView 是一套基于 Vue.js 的开源 UI 组件库，主要服务于 PC 界面的中后台产品。
 
-**ant-design-vue** ant-design-vue 是 Ant Design 的Vue实现，组件的风格与Ant Design保持同步，组件的html结构和css样式也保持一致，真正做到了样式0修改，组件API也尽量保持了一致。 [ant-design-vue](https://github.com/vueComponent/ant-design-vue)。
+**[ant-design-vue](https://github.com/vueComponent/ant-design-vue)** ：ant-design-vue 是 Ant Design 的Vue实现，组件的风格与Ant Design保持同步，组件的html结构和css样式也保持一致，真正做到了样式0修改，组件API也尽量保持了一致。 
 
 
 --------------------------------------------
@@ -29,6 +29,17 @@
 统计的数据有时效性，如需了解最新的数据[点我](https://www.npmtrends.com/element-ui-vs-iview-vs-ant-design-vue)
 
 -------------------------------
+
+
+### 开发对比
+
+|  | element-ui | iview | ant-design-vue |
+| :----: | :----: | :----: | :----: 
+| 开发团队 | 饿了么 | TalkingData  | 蚂蚁金服 |
+
+
+
+--------------------------------------------
 
 ### 入门方式
     
@@ -140,7 +151,80 @@ Table
   
   ![image](https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/el-table.png)
 
-  ![image](https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/el-table-code.png)
+```
+  <template>
+    <el-table
+      :data="tableData"
+      style="width: 100%">
+      <el-table-column
+        label="日期"
+        width="180">
+        <template slot-scope="scope">
+          <i class="el-icon-time"></i>
+          <span style="margin-left: 10px">{{ scope.row.date }}</span>
+        </template>
+      </el-table-column>
+      <el-table-column
+        label="姓名"
+        width="180">
+        <template slot-scope="scope">
+          <el-popover trigger="hover" placement="top">
+            <p>姓名: {{ scope.row.name }}</p>
+            <p>住址: {{ scope.row.address }}</p>
+            <div slot="reference" class="name-wrapper">
+              <el-tag size="medium">{{ scope.row.name }}</el-tag>
+            </div>
+          </el-popover>
+        </template>
+      </el-table-column>
+      <el-table-column label="操作">
+        <template slot-scope="scope">
+          <el-button
+            size="mini"
+            @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+          <el-button
+            size="mini"
+            type="danger"
+            @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+  </template>
+
+  <script>
+    export default {
+      data() {
+        return {
+          tableData: [{
+            date: '2016-05-02',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1518 弄'
+          }, {
+            date: '2016-05-04',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1517 弄'
+          }, {
+            date: '2016-05-01',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1519 弄'
+          }, {
+            date: '2016-05-03',
+            name: '王小虎',
+            address: '上海市普陀区金沙江路 1516 弄'
+          }]
+        }
+      },
+      methods: {
+        handleEdit(index, row) {
+          console.log(index, row);
+        },
+        handleDelete(index, row) {
+          console.log(index, row);
+        }
+      }
+    }
+  </script>
+```
 
 * iview
   
@@ -148,17 +232,271 @@ Table
 
   `render`
 
-  ![image](https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/iview-table-code-render.png)
+```
+  <template>
+      <Table border :columns="columns7" :data="data6"></Table>
+  </template>
+  <script>
+      export default {
+          data () {
+              return {
+                  columns7: [
+                      {
+                          title: 'Name',
+                          key: 'name',
+                          render: (h, params) => {
+                              return h('div', [
+                                  h('Icon', {
+                                      props: {
+                                          type: 'person'
+                                      }
+                                  }),
+                                  h('strong', params.row.name)
+                              ]);
+                          }
+                      },
+                      {
+                          title: 'Age',
+                          key: 'age'
+                      },
+                      {
+                          title: 'Address',
+                          key: 'address'
+                      },
+                      {
+                          title: 'Action',
+                          key: 'action',
+                          width: 150,
+                          align: 'center',
+                          render: (h, params) => {
+                              return h('div', [
+                                  h('Button', {
+                                      props: {
+                                          type: 'primary',
+                                          size: 'small'
+                                      },
+                                      style: {
+                                          marginRight: '5px'
+                                      },
+                                      on: {
+                                          click: () => {
+                                              this.show(params.index)
+                                          }
+                                      }
+                                  }, 'View'),
+                                  h('Button', {
+                                      props: {
+                                          type: 'error',
+                                          size: 'small'
+                                      },
+                                      on: {
+                                          click: () => {
+                                              this.remove(params.index)
+                                          }
+                                      }
+                                  }, 'Delete')
+                              ]);
+                          }
+                      }
+                  ],
+                  data6: [
+                      {
+                          name: 'John Brown',
+                          age: 18,
+                          address: 'New York No. 1 Lake Park'
+                      },
+                      {
+                          name: 'Jim Green',
+                          age: 24,
+                          address: 'London No. 1 Lake Park'
+                      },
+                      {
+                          name: 'Joe Black',
+                          age: 30,
+                          address: 'Sydney No. 1 Lake Park'
+                      },
+                      {
+                          name: 'Jon Snow',
+                          age: 26,
+                          address: 'Ottawa No. 2 Lake Park'
+                      }
+                  ]
+              }
+          },
+          methods: {
+              show (index) {
+                  this.$Modal.info({
+                      title: 'User Info',
+                      content: `Name：${this.data6[index].name}<br>Age：${this.data6[index].age}<br>Address：${this.data6[index].address}`
+                  })
+              },
+              remove (index) {
+                  this.data6.splice(index, 1);
+              }
+          }
+      }
+  </script>
+
+```
 
   `slot-scope`
 
-  ![image](https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/iview-table-code.png)
+```
+  <template>
+    <Table border :columns="columns12" :data="data6">
+        <template slot-scope="{ row }" slot="name">
+            <strong>{{ row.name }}</strong>
+        </template>
+        <template slot-scope="{ row, index }" slot="action">
+            <Button type="primary" size="small" style="margin-right: 5px" @click="show(index)">View</Button>
+            <Button type="error" size="small" @click="remove(index)">Delete</Button>
+        </template>
+    </Table>
+</template>
+<script>
+    export default {
+        data () {
+            return {
+                columns12: [
+                    {
+                        title: 'Name',
+                        slot: 'name'
+                    },
+                    {
+                        title: 'Age',
+                        key: 'age'
+                    },
+                    {
+                        title: 'Address',
+                        key: 'address'
+                    },
+                    {
+                        title: 'Action',
+                        slot: 'action',
+                        width: 150,
+                        align: 'center'
+                    }
+                ],
+                data6: [
+                    {
+                        name: 'John Brown',
+                        age: 18,
+                        address: 'New York No. 1 Lake Park'
+                    },
+                    {
+                        name: 'Jim Green',
+                        age: 24,
+                        address: 'London No. 1 Lake Park'
+                    },
+                    {
+                        name: 'Joe Black',
+                        age: 30,
+                        address: 'Sydney No. 1 Lake Park'
+                    },
+                    {
+                        name: 'Jon Snow',
+                        age: 26,
+                        address: 'Ottawa No. 2 Lake Park'
+                    }
+                ]
+            }
+        },
+        methods: {
+            show (index) {
+                this.$Modal.info({
+                    title: 'User Info',
+                    content: `Name：${this.data6[index].name}<br>Age：${this.data6[index].age}<br>Address：${this.data6[index].address}`
+                })
+            },
+            remove (index) {
+                this.data6.splice(index, 1);
+            }
+        }
+    }
+</script>
+
+      
+```
 
 * antd
   
   ![image](https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/antd-table.png)
 
-  ![image](https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/antd-table-code.png)
+```
+  <template>
+    <a-table :columns="columns" :dataSource="data">
+      <a slot="name" slot-scope="text" href="javascript:;">{{text}}</a>
+      <span slot="customTitle"><a-icon type="smile-o" /> Name</span>
+      <span slot="tags" slot-scope="tags">
+        <a-tag v-for="tag in tags" color="blue" :key="tag">{{tag}}</a-tag>
+      </span>
+      <span slot="action" slot-scope="text, record">
+        <a href="javascript:;">Invite 一 {{record.name}}</a>
+        <a-divider type="vertical" />
+        <a href="javascript:;">Delete</a>
+        <a-divider type="vertical" />
+        <a href="javascript:;" class="ant-dropdown-link">
+          More actions <a-icon type="down" />
+        </a>
+      </span>
+    </a-table>
+  </template>
+  <script>
+  const columns = [{
+    dataIndex: 'name',
+    key: 'name',
+    slots: { title: 'customTitle' },
+    scopedSlots: { customRender: 'name' },
+  }, {
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age',
+  }, {
+    title: 'Address',
+    dataIndex: 'address',
+    key: 'address',
+  }, {
+    title: 'Tags',
+    key: 'tags',
+    dataIndex: 'tags',
+    scopedSlots: { customRender: 'tags' },
+  }, {
+    title: 'Action',
+    key: 'action',
+    scopedSlots: { customRender: 'action' },
+  }];
+
+  const data = [{
+    key: '1',
+    name: 'John Brown',
+    age: 32,
+    address: 'New York No. 1 Lake Park',
+    tags: ['nice', 'developer'],
+  }, {
+    key: '2',
+    name: 'Jim Green',
+    age: 42,
+    address: 'London No. 1 Lake Park',
+    tags: ['loser'],
+  }, {
+    key: '3',
+    name: 'Joe Black',
+    age: 32,
+    address: 'Sidney No. 1 Lake Park',
+    tags: ['cool', 'teacher'],
+  }];
+
+  export default {
+    data() {
+      return {
+        data,
+        columns,
+      }
+    }
+  }
+  </script>
+
+```
 
   iview和antd在生成类似表格这些较复杂的组件时，使用的是`Vue`的`render`函数， Element直接在`template`中插入对应模板
 
@@ -584,16 +922,18 @@ antd 的样式使用了 Less 作为开发语言，并定义了一系列全局/�
    
    > 以下设计资源由[Ant Design](https://ant.design/)官方开发并维护
 
-   `新 Sketch Symbols 组件`、`Sketch Symbols 组件`、`Ant Design Pro`、`Ant Design Library`、`Kitchen`、`Ant UX`、`Web Font`、`Ant Design 原型（xiaopiu）`
+  ![image](https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/antd-d.png)
+
 2. Element
-  提供了 `Sketch Template` 和 `Axure Components` 
+   
+  ![image](https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/el-d.png)
 
 3. iview
   暂无
   
 
 
-`vue-antd`早在Vue@1.x的时候曾经活跃过，但后期却停止维护了，`Ant Design Vue`是Ant Design 的Vue实现 ；
+`vue-antd`早在Vue1.x的时候曾经活跃过，但后期却停止维护了，`Ant Design Vue`是Ant Design 的Vue实现 ；
 
 `iview` 的UI 源自 `AntDesign`，得益于近些年Vue发展的势头迅猛，iview的社区生态目前也比较庞大，对大部分的项目都能够提供较为完善的解决方案；
 
