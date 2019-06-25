@@ -36,6 +36,7 @@
 |  | element-ui | iview | ant-design-vue |
 | :----: | :----: | :----: | :----: 
 | 开发团队 | 饿了么 | TalkingData  | 蚂蚁金服 |
+| 协议 | MIT | MIT  | MIT |
 
 
 

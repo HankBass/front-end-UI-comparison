@@ -1,0 +1,1252 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:README</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="vue-pc-ui-">Vue项目PC的UI框架对比</h1>
+<h2 id="-span-id-compared-ui-span-"><span id="compared">三大UI框架对比</span></h2>
+<hr>
+<h3 id="-">简述</h3>
+<p><strong><a href="https://github.com/ElemeFE/element">element-ui</a></strong> ：Element，一套为开发者、设计师和产品经理准备的基于 Vue 2.0 的桌面端组件库。</p>
+<p><strong><a href="https://github.com/iview/iview">iview</a></strong> ：iView 是一套基于 Vue.js 的开源 UI 组件库，主要服务于 PC 界面的中后台产品。</p>
+<p><strong><a href="https://github.com/vueComponent/ant-design-vue">ant-design-vue</a></strong> ：ant-design-vue 是 Ant Design 的Vue实现，组件的风格与Ant Design保持同步，组件的html结构和css样式也保持一致，真正做到了样式0修改，组件API也尽量保持了一致。 </p>
+<hr>
+<h3 id="github-stats">GitHub Stats</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:right">stars</th>
+<th style="text-align:right">forks</th>
+<th style="text-align:right">issues</th>
+<th style="text-align:right">updated</th>
+<th style="text-align:right">created</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/ElemeFE/element">element-ui</a></td>
+<td style="text-align:right">35923</td>
+<td style="text-align:right">7185</td>
+<td style="text-align:right">671</td>
+<td style="text-align:right">Mar 19, 2019</td>
+<td style="text-align:right">Sep 3, 2016</td>
+</tr>
+<tr>
+<td><a href="https://github.com/iview/iview">iview</a></td>
+<td style="text-align:right">20302</td>
+<td style="text-align:right">3502</td>
+<td style="text-align:right">675</td>
+<td style="text-align:right">Mar 20, 2019</td>
+<td style="text-align:right">Jul 28, 2016</td>
+</tr>
+<tr>
+<td><a href="https://github.com/vueComponent/ant-design-vue">ant-design-vue</a></td>
+<td style="text-align:right">5665</td>
+<td style="text-align:right">528</td>
+<td style="text-align:right">54</td>
+<td style="text-align:right">Mar 19, 2019</td>
+<td style="text-align:right">Sep 20, 2017</td>
+</tr>
+</tbody>
+</table>
+<p>统计的数据有时效性，如需了解最新的数据<a href="https://www.npmtrends.com/element-ui-vs-iview-vs-ant-design-vue">点我</a></p>
+<hr>
+<h3 id="-">开发对比</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">element-ui</th>
+<th style="text-align:center">iview</th>
+<th style="text-align:center">ant-design-vue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">开发团队</td>
+<td style="text-align:center">饿了么</td>
+<td style="text-align:center">TalkingData</td>
+<td style="text-align:center">蚂蚁金服</td>
+</tr>
+<tr>
+<td style="text-align:center">协议</td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">MIT</td>
+<td style="text-align:center">MIT</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-">入门方式</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">对比</th>
+<th style="text-align:center">element-ui</th>
+<th style="text-align:center">iview</th>
+<th style="text-align:center">ant-design-vue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">按需加载</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">支持</td>
+<td style="text-align:center">支持</td>
+</tr>
+<tr>
+<td style="text-align:center">样式自定义</td>
+<td style="text-align:center">SCSS</td>
+<td style="text-align:center">Less</td>
+<td style="text-align:center">Less</td>
+</tr>
+<tr>
+<td style="text-align:center">国际化</td>
+<td style="text-align:center">兼容<a href="https://github.com/kazupon/vue-i18n">vue-i18n@5.x</a></td>
+<td style="text-align:center">vue-i18n</td>
+<td style="text-align:center">支持</td>
+</tr>
+<tr>
+<td style="text-align:center">插件</td>
+<td style="text-align:center"><a href="https://github.com/ElementUI/vue-cli-plugin-element">Element</a></td>
+<td style="text-align:center"><a href="https://github.com/iview/vue-cli-plugin-iview">iview</a></td>
+<td style="text-align:center"><a href="https://github.com/vueComponent/vue-cli-plugin-ant-design">ant-design-vue</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-">功能对比</h3>
+<h4 id="-">体积</h4>
+<p>  任何框架都不会十全十美：<a href="https://bundlephobia.com/result?p=ant-design-vue@1.3.7">ant-design-vue</a> 非常臃肿。gzip 文件大小为 432.8kB，而 <a href="https://bundlephobia.com/result?p=element-ui@2.6.1">Element</a> 为 139.9kB，<a href="https://bundlephobia.com/result?p=iview@3.3.1">iview</a> 为 127.2kB。</p>
+<h4 id="-">功能列表</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">UI</th>
+<th style="text-align:center">iview</th>
+<th style="text-align:center">ant-design-vue</th>
+<th style="text-align:center">element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">版本号</td>
+<td style="text-align:center">3.3.1</td>
+<td style="text-align:center">1.3.7</td>
+<td style="text-align:center">2.6.1</td>
+</tr>
+<tr>
+<td style="text-align:center">Color 色彩</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Font 字体</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Button 按钮</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Border 边框</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Icon 图标</td>
+<td style="text-align:center">√(多)</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√(少)</td>
+</tr>
+<tr>
+<td style="text-align:center">Grid 栅格</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Layout 布局</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Card 卡片</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Collapse 折叠面板</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Split 面板分割</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">Divider 分割线</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">Cell 单元格</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">Menu 导航菜单</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Tabs 标签页</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Dropdown 下拉菜单</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Page 分页</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Breadcrumb 面包屑</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Badge 徽标数</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Anchor 锚点</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Steps 步骤条</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">LoadingBar 加载进度条</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Input 输入框</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Checkbox 多选框</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Switch 开关</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Table 表格</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Select 选择器</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">AutoComplete 自动完成</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Slider 滑块</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">DatePicker 日期选择器</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">TimePicker 时间选择器</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Calendar 日历</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">Comment 评论</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">List 列表</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">Skeleton 骨架屏</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">Cascader 级联选择</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Transfer 穿梭框</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">InputNumber 数字输入框</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Rate 评分</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Upload 上传</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">ColorPicker 颜色选择器</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Form 表单</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Alert 警告提示</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Message 全局提示</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Notice 通知提醒</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Modal 对话框</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Drawer 抽屉</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">Tree 树形控件</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Tooltip 文字提示</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Poptip 气泡提示</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Progress 进度条</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Avatar 头像</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">Tag 标签</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Carousel 走马灯</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">TimeLine 时间轴</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Time 相对时间</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">Circle 进度环</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">Affix 图钉</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">BackTop 返回顶部</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">Spin 加载中</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+<tr>
+<td style="text-align:center">Scroll 无限滚动</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>三大UI框架基本涵盖了日常开发中的各类基础组件，一些小众组件上各有所长 整体iview 更丰富。</p>
+</blockquote>
+<hr>
+<h4 id="-">组件调用</h4>
+<h5 id="-">组件命名方式</h5>
+<p>Element和antd用的是 短横线分隔式命名，例：el-table</p>
+<p>iview用的是 驼峰式命名，例：Table</p>
+<h5 id="-">组件的功能性</h5>
+<ol>
+<li>API风格</li>
+</ol>
+<p>下面以日常使用较为广泛的<code>Table</code>来做对比</p>
+<p>Table</p>
+<ul>
+<li><p>Element</p>
+<p><img src="https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/el-table.png" alt="image"></p>
+</li>
+</ul>
+<pre><code>  &lt;template&gt;
+    &lt;el-table
+      :data=&quot;tableData&quot;
+      style=&quot;width: 100%&quot;&gt;
+      &lt;el-table-column
+        label=&quot;日期&quot;
+        width=&quot;180&quot;&gt;
+        &lt;template slot-scope=&quot;scope&quot;&gt;
+          &lt;i class=&quot;el-icon-time&quot;&gt;&lt;/i&gt;
+          &lt;span style=&quot;margin-left: 10px&quot;&gt;{{ scope.row.date }}&lt;/span&gt;
+        &lt;/template&gt;
+      &lt;/el-table-column&gt;
+      &lt;el-table-column
+        label=&quot;姓名&quot;
+        width=&quot;180&quot;&gt;
+        &lt;template slot-scope=&quot;scope&quot;&gt;
+          &lt;el-popover trigger=&quot;hover&quot; placement=&quot;top&quot;&gt;
+            &lt;p&gt;姓名: {{ scope.row.name }}&lt;/p&gt;
+            &lt;p&gt;住址: {{ scope.row.address }}&lt;/p&gt;
+            &lt;div slot=&quot;reference&quot; class=&quot;name-wrapper&quot;&gt;
+              &lt;el-tag size=&quot;medium&quot;&gt;{{ scope.row.name }}&lt;/el-tag&gt;
+            &lt;/div&gt;
+          &lt;/el-popover&gt;
+        &lt;/template&gt;
+      &lt;/el-table-column&gt;
+      &lt;el-table-column label=&quot;操作&quot;&gt;
+        &lt;template slot-scope=&quot;scope&quot;&gt;
+          &lt;el-button
+            size=&quot;mini&quot;
+            @click=&quot;handleEdit(scope.$index, scope.row)&quot;&gt;编辑&lt;/el-button&gt;
+          &lt;el-button
+            size=&quot;mini&quot;
+            type=&quot;danger&quot;
+            @click=&quot;handleDelete(scope.$index, scope.row)&quot;&gt;删除&lt;/el-button&gt;
+        &lt;/template&gt;
+      &lt;/el-table-column&gt;
+    &lt;/el-table&gt;
+  &lt;/template&gt;
+
+  &lt;script&gt;
+    export default {
+      data() {
+        return {
+          tableData: [{
+            date: &#39;2016-05-02&#39;,
+            name: &#39;王小虎&#39;,
+            address: &#39;上海市普陀区金沙江路 1518 弄&#39;
+          }, {
+            date: &#39;2016-05-04&#39;,
+            name: &#39;王小虎&#39;,
+            address: &#39;上海市普陀区金沙江路 1517 弄&#39;
+          }, {
+            date: &#39;2016-05-01&#39;,
+            name: &#39;王小虎&#39;,
+            address: &#39;上海市普陀区金沙江路 1519 弄&#39;
+          }, {
+            date: &#39;2016-05-03&#39;,
+            name: &#39;王小虎&#39;,
+            address: &#39;上海市普陀区金沙江路 1516 弄&#39;
+          }]
+        }
+      },
+      methods: {
+        handleEdit(index, row) {
+          console.log(index, row);
+        },
+        handleDelete(index, row) {
+          console.log(index, row);
+        }
+      }
+    }
+  &lt;/script&gt;
+</code></pre><ul>
+<li><p>iview</p>
+<p><img src="https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/iview-table.png" alt="image"></p>
+<p><code>render</code></p>
+</li>
+</ul>
+<pre><code>  &lt;template&gt;
+      &lt;Table border :columns=&quot;columns7&quot; :data=&quot;data6&quot;&gt;&lt;/Table&gt;
+  &lt;/template&gt;
+  &lt;script&gt;
+      export default {
+          data () {
+              return {
+                  columns7: [
+                      {
+                          title: &#39;Name&#39;,
+                          key: &#39;name&#39;,
+                          render: (h, params) =&gt; {
+                              return h(&#39;div&#39;, [
+                                  h(&#39;Icon&#39;, {
+                                      props: {
+                                          type: &#39;person&#39;
+                                      }
+                                  }),
+                                  h(&#39;strong&#39;, params.row.name)
+                              ]);
+                          }
+                      },
+                      {
+                          title: &#39;Age&#39;,
+                          key: &#39;age&#39;
+                      },
+                      {
+                          title: &#39;Address&#39;,
+                          key: &#39;address&#39;
+                      },
+                      {
+                          title: &#39;Action&#39;,
+                          key: &#39;action&#39;,
+                          width: 150,
+                          align: &#39;center&#39;,
+                          render: (h, params) =&gt; {
+                              return h(&#39;div&#39;, [
+                                  h(&#39;Button&#39;, {
+                                      props: {
+                                          type: &#39;primary&#39;,
+                                          size: &#39;small&#39;
+                                      },
+                                      style: {
+                                          marginRight: &#39;5px&#39;
+                                      },
+                                      on: {
+                                          click: () =&gt; {
+                                              this.show(params.index)
+                                          }
+                                      }
+                                  }, &#39;View&#39;),
+                                  h(&#39;Button&#39;, {
+                                      props: {
+                                          type: &#39;error&#39;,
+                                          size: &#39;small&#39;
+                                      },
+                                      on: {
+                                          click: () =&gt; {
+                                              this.remove(params.index)
+                                          }
+                                      }
+                                  }, &#39;Delete&#39;)
+                              ]);
+                          }
+                      }
+                  ],
+                  data6: [
+                      {
+                          name: &#39;John Brown&#39;,
+                          age: 18,
+                          address: &#39;New York No. 1 Lake Park&#39;
+                      },
+                      {
+                          name: &#39;Jim Green&#39;,
+                          age: 24,
+                          address: &#39;London No. 1 Lake Park&#39;
+                      },
+                      {
+                          name: &#39;Joe Black&#39;,
+                          age: 30,
+                          address: &#39;Sydney No. 1 Lake Park&#39;
+                      },
+                      {
+                          name: &#39;Jon Snow&#39;,
+                          age: 26,
+                          address: &#39;Ottawa No. 2 Lake Park&#39;
+                      }
+                  ]
+              }
+          },
+          methods: {
+              show (index) {
+                  this.$Modal.info({
+                      title: &#39;User Info&#39;,
+                      content: `Name：${this.data6[index].name}&lt;br&gt;Age：${this.data6[index].age}&lt;br&gt;Address：${this.data6[index].address}`
+                  })
+              },
+              remove (index) {
+                  this.data6.splice(index, 1);
+              }
+          }
+      }
+  &lt;/script&gt;
+
+</code></pre><p>  <code>slot-scope</code></p>
+<pre><code>  &lt;template&gt;
+    &lt;Table border :columns=&quot;columns12&quot; :data=&quot;data6&quot;&gt;
+        &lt;template slot-scope=&quot;{ row }&quot; slot=&quot;name&quot;&gt;
+            &lt;strong&gt;{{ row.name }}&lt;/strong&gt;
+        &lt;/template&gt;
+        &lt;template slot-scope=&quot;{ row, index }&quot; slot=&quot;action&quot;&gt;
+            &lt;Button type=&quot;primary&quot; size=&quot;small&quot; style=&quot;margin-right: 5px&quot; @click=&quot;show(index)&quot;&gt;View&lt;/Button&gt;
+            &lt;Button type=&quot;error&quot; size=&quot;small&quot; @click=&quot;remove(index)&quot;&gt;Delete&lt;/Button&gt;
+        &lt;/template&gt;
+    &lt;/Table&gt;
+&lt;/template&gt;
+&lt;script&gt;
+    export default {
+        data () {
+            return {
+                columns12: [
+                    {
+                        title: &#39;Name&#39;,
+                        slot: &#39;name&#39;
+                    },
+                    {
+                        title: &#39;Age&#39;,
+                        key: &#39;age&#39;
+                    },
+                    {
+                        title: &#39;Address&#39;,
+                        key: &#39;address&#39;
+                    },
+                    {
+                        title: &#39;Action&#39;,
+                        slot: &#39;action&#39;,
+                        width: 150,
+                        align: &#39;center&#39;
+                    }
+                ],
+                data6: [
+                    {
+                        name: &#39;John Brown&#39;,
+                        age: 18,
+                        address: &#39;New York No. 1 Lake Park&#39;
+                    },
+                    {
+                        name: &#39;Jim Green&#39;,
+                        age: 24,
+                        address: &#39;London No. 1 Lake Park&#39;
+                    },
+                    {
+                        name: &#39;Joe Black&#39;,
+                        age: 30,
+                        address: &#39;Sydney No. 1 Lake Park&#39;
+                    },
+                    {
+                        name: &#39;Jon Snow&#39;,
+                        age: 26,
+                        address: &#39;Ottawa No. 2 Lake Park&#39;
+                    }
+                ]
+            }
+        },
+        methods: {
+            show (index) {
+                this.$Modal.info({
+                    title: &#39;User Info&#39;,
+                    content: `Name：${this.data6[index].name}&lt;br&gt;Age：${this.data6[index].age}&lt;br&gt;Address：${this.data6[index].address}`
+                })
+            },
+            remove (index) {
+                this.data6.splice(index, 1);
+            }
+        }
+    }
+&lt;/script&gt;
+
+
+</code></pre><ul>
+<li><p>antd</p>
+<p><img src="https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/antd-table.png" alt="image"></p>
+</li>
+</ul>
+<pre><code>  &lt;template&gt;
+    &lt;a-table :columns=&quot;columns&quot; :dataSource=&quot;data&quot;&gt;
+      &lt;a slot=&quot;name&quot; slot-scope=&quot;text&quot; href=&quot;javascript:;&quot;&gt;{{text}}&lt;/a&gt;
+      &lt;span slot=&quot;customTitle&quot;&gt;&lt;a-icon type=&quot;smile-o&quot; /&gt; Name&lt;/span&gt;
+      &lt;span slot=&quot;tags&quot; slot-scope=&quot;tags&quot;&gt;
+        &lt;a-tag v-for=&quot;tag in tags&quot; color=&quot;blue&quot; :key=&quot;tag&quot;&gt;{{tag}}&lt;/a-tag&gt;
+      &lt;/span&gt;
+      &lt;span slot=&quot;action&quot; slot-scope=&quot;text, record&quot;&gt;
+        &lt;a href=&quot;javascript:;&quot;&gt;Invite 一 {{record.name}}&lt;/a&gt;
+        &lt;a-divider type=&quot;vertical&quot; /&gt;
+        &lt;a href=&quot;javascript:;&quot;&gt;Delete&lt;/a&gt;
+        &lt;a-divider type=&quot;vertical&quot; /&gt;
+        &lt;a href=&quot;javascript:;&quot; class=&quot;ant-dropdown-link&quot;&gt;
+          More actions &lt;a-icon type=&quot;down&quot; /&gt;
+        &lt;/a&gt;
+      &lt;/span&gt;
+    &lt;/a-table&gt;
+  &lt;/template&gt;
+  &lt;script&gt;
+  const columns = [{
+    dataIndex: &#39;name&#39;,
+    key: &#39;name&#39;,
+    slots: { title: &#39;customTitle&#39; },
+    scopedSlots: { customRender: &#39;name&#39; },
+  }, {
+    title: &#39;Age&#39;,
+    dataIndex: &#39;age&#39;,
+    key: &#39;age&#39;,
+  }, {
+    title: &#39;Address&#39;,
+    dataIndex: &#39;address&#39;,
+    key: &#39;address&#39;,
+  }, {
+    title: &#39;Tags&#39;,
+    key: &#39;tags&#39;,
+    dataIndex: &#39;tags&#39;,
+    scopedSlots: { customRender: &#39;tags&#39; },
+  }, {
+    title: &#39;Action&#39;,
+    key: &#39;action&#39;,
+    scopedSlots: { customRender: &#39;action&#39; },
+  }];
+
+  const data = [{
+    key: &#39;1&#39;,
+    name: &#39;John Brown&#39;,
+    age: 32,
+    address: &#39;New York No. 1 Lake Park&#39;,
+    tags: [&#39;nice&#39;, &#39;developer&#39;],
+  }, {
+    key: &#39;2&#39;,
+    name: &#39;Jim Green&#39;,
+    age: 42,
+    address: &#39;London No. 1 Lake Park&#39;,
+    tags: [&#39;loser&#39;],
+  }, {
+    key: &#39;3&#39;,
+    name: &#39;Joe Black&#39;,
+    age: 32,
+    address: &#39;Sidney No. 1 Lake Park&#39;,
+    tags: [&#39;cool&#39;, &#39;teacher&#39;],
+  }];
+
+  export default {
+    data() {
+      return {
+        data,
+        columns,
+      }
+    }
+  }
+  &lt;/script&gt;
+
+</code></pre><p>  iview和antd在生成类似表格这些较复杂的组件时，使用的是<code>Vue</code>的<code>render</code>函数， Element直接在<code>template</code>中插入对应模板</p>
+<blockquote>
+<p>iview在3.2.x之后的版本，也支持了和Element类似的<code>slot-scope</code>语法渲染</p>
+</blockquote>
+<p>  各种属性、配置、方法，Element有85项之多，iview则有56项，antd是69项。因为篇幅的原因，这里就不展开描述了。</p>
+<blockquote>
+<p>总体比较 ，在使用上，iview相对于Element要简单，但Element的在某些功能的拓展上更丰富</p>
+</blockquote>
+<h3 id="-">项目优化角度</h3>
+<h4 id="-">按需加载</h4>
+<ul>
+<li>Element</li>
+</ul>
+<p>借助 <a href="https://github.com/QingWei-Li/babel-plugin-component">babel-plugin-component</a>，我们可以只引入需要的组件，以达到减小项目体积的目的。</p>
+<p>首先，安装 babel-plugin-component：</p>
+<pre><code>  npm install babel-plugin-component -D
+</code></pre><p>然后，将 .babelrc 修改为：</p>
+<pre><code>  {
+    &quot;presets&quot;: [[&quot;es2015&quot;, { &quot;modules&quot;: false }]],
+    &quot;plugins&quot;: [
+      [
+        &quot;component&quot;,
+        {
+          &quot;libraryName&quot;: &quot;element-ui&quot;,
+          &quot;styleLibraryName&quot;: &quot;theme-chalk&quot;
+        }
+      ]
+    ]
+  }
+</code></pre><p>接下来，如果你只希望引入部分组件，比如 Button 和 Select，那么需要在 main.js 中写入以下内容：</p>
+<pre><code>  import Vue from &#39;vue&#39;;
+  import { Button, Select } from &#39;element-ui&#39;;
+  import App from &#39;./App.vue&#39;;
+
+  Vue.component(Button.name, Button);
+  Vue.component(Select.name, Select);
+  /* 或写为
+  * Vue.use(Button)
+  * Vue.use(Select)
+  */
+
+  new Vue({
+    el: &#39;#app&#39;,
+    render: h =&gt; h(App)
+  });
+</code></pre><ul>
+<li>iview</li>
+</ul>
+<p>借助插件 <a href="https://github.com/ant-design/babel-plugin-import">babel-plugin-import</a>可以实现按需加载组件，减少文件体积。首先安装，并在文件 .babelrc 中配置：</p>
+<pre><code>  npm install babel-plugin-import --save-dev
+</code></pre><pre><code>  // .babelrc
+  {
+    &quot;plugins&quot;: [[&quot;import&quot;, {
+      &quot;libraryName&quot;: &quot;iview&quot;,
+      &quot;libraryDirectory&quot;: &quot;src/components&quot;
+    }]]
+  }
+</code></pre><p>然后这样按需引入组件，就可以减小体积了：</p>
+<pre><code>  import { Button, Table } from &#39;iview&#39;;
+  Vue.component(&#39;Button&#39;, Button);
+  Vue.component(&#39;Table&#39;, Table);
+</code></pre><p>特别提醒</p>
+<p>按需引用仍然需要导入样式，即在 main.js 或根组件执行 import &#39;iview/dist/styles/iview.css&#39;;</p>
+<ul>
+<li>antd</li>
+</ul>
+<p>如果你在开发环境的控制台看到下面的提示，那么你可能使用了 <code>import { Button } from &#39;ant-design-vue&#39;</code>; 的写法引入了 antd 下所有的模块，这会影响应用的网络性能。</p>
+<p><code>You are using a whole package of antd, please use https://www.npmjs.com/package/babel-plugin-import to reduce app bundle size.</code></p>
+<p>可以通过以下的写法来按需加载组件。</p>
+<pre><code>  import Button from &#39;ant-design-vue/lib/button&#39;;
+  import &#39;ant-design-vue/lib/button/style&#39;; // 或者 ant-design-vue/lib/button/style/css 加载 css 文件
+</code></pre><p>如果你使用了 <code>babel</code>，那么可以使用 <a href="https://github.com/ant-design/babel-plugin-import">babel-plugin-import</a> 来进行按需加载，加入这个插件后。你可以仍然这么写：</p>
+<p>import { Button } from &#39;ant-design-vue&#39;;
+插件会帮你转换成 ant-design-vue/lib/xxx 的写法。另外此插件配合 style 属性可以做到模块样式的按需自动加载。</p>
+<p>注意，babel-plugin-import 的 <code>style</code> 属性除了引入对应组件的样式，也会引入一些必要的全局样式。如果你不需要它们，建议不要使用此属性。你可以 <code>import &#39;ant-design-vue/dist/antd.css</code> 手动引入，并覆盖全局样式。</p>
+<h4 id="-">定制主题</h4>
+<ul>
+<li>ELement
+Element 默认提供一套主题，CSS 命名采用 BEM 的风格，方便使用者覆盖样式。我们提供了三种方法，可以进行不同程度的样式自定义。</li>
+</ul>
+<p>仅替换主题色</p>
+<p>如果仅希望更换 Element 的主题色，推荐使用<a href="https://elementui.github.io/theme-chalk-preview/">在线主题生成工具</a>。Element 默认的主题色是鲜艳、友好的蓝色。通过替换主题色，能够让 Element 的视觉更加符合具体项目的定位。</p>
+<p>在项目中改变 SCSS 变量</p>
+<p>Element 的 theme-chalk 使用 SCSS 编写，如果你的项目也使用了 SCSS，那么可以直接在项目中改变 Element 的样式变量。新建一个样式文件，例如 <code>element-variables.scss</code>，写入以下内容：</p>
+<pre><code>  /* 改变主题色变量 */
+  $--color-primary: teal;
+
+  /* 改变 icon 字体路径变量，必需 */
+  $--font-path: &#39;~element-ui/lib/theme-chalk/fonts&#39;;
+
+  @import &quot;~element-ui/packages/theme-chalk/src/index&quot;;
+</code></pre><p>之后，在项目的入口文件中，直接引入以上样式文件即可（无需引入 Element 编译好的 CSS 文件）：</p>
+<pre><code>  import Vue from &#39;vue&#39;
+  import Element from &#39;element-ui&#39;
+  import &#39;./element-variables.scss&#39;
+
+  Vue.use(Element)
+</code></pre><blockquote>
+<p>需要注意的是，覆盖字体路径变量是必需的，将其赋值为 Element 中 icon 图标所在的相对路径即可。</p>
+</blockquote>
+<p>命令行主题工具</p>
+<p>如果你的项目没有使用 <code>SCSS</code>，那么可以使用命令行主题工具进行深层次的主题定制：</p>
+<p>安装工具</p>
+<p>首先安装「主题生成工具」，可以全局安装或者安装在当前项目下，推荐安装在项目里，方便别人 clone 项目时能直接安装依赖并启动，这里以全局安装做演示。</p>
+<p><code>npm i element-theme -g</code></p>
+<p>安装白垩主题，可以从 npm 安装或者从 GitHub 拉取最新代码。</p>
+<pre><code>  # 从 npm
+  npm i element-theme-chalk -D
+
+  # 从 GitHub
+  npm i https://github.com/ElementUI/theme-chalk -D
+</code></pre><p>初始化变量文件</p>
+<p>主题生成工具安装成功后，如果全局安装可以在命令行里通过 <code>et</code> 调用工具，如果安装在当前目录下，需要通过 <code>node_modules/.bin/et</code>访问到命令。执行 <code>-i</code> 初始化变量文件。默认输出到 <code>element-variables.scss</code>，当然你可以传参数指定文件输出目录。</p>
+<pre><code>  et -i [可以自定义变量文件]
+
+  &gt; ✔ Generator variables file
+</code></pre><p>如果使用默认配置，执行后当前目录会有一个 <code>element-variables.scss</code> 文件。内部包含了主题所用到的所有变量，它们使用 SCSS 的格式定义。大致结构如下：</p>
+<pre><code>  $--color-primary: #409EFF !default;
+  $--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
+  $--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
+  $--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
+  $--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* 8cc5ff */
+  $--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* a0cfff */
+  $--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* b3d8ff */
+  $--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* c6e2ff */
+  $--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
+  $--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
+
+  $--color-success: #67c23a !default;
+  $--color-warning: #e6a23c !default;
+  $--color-danger: #f56c6c !default;
+  $--color-info: #909399 !default;
+
+  ...
+</code></pre><p>修改变量</p>
+<p>直接编辑 <code>element-variables.scss</code> 文件，例如修改主题色为红色。</p>
+<pre><code>  $--color-primary: red;
+</code></pre><p>编译主题</p>
+<p>保存文件后，到命令行里执行 <code>et</code> 编译主题，如果你想启用 <code>watch</code> 模式，实时编译主题，增加 <code>-w</code> 参数；如果你在初始化时指定了自定义变量文件，则需要增加 <code>-c</code> 参数，并带上你的变量文件名</p>
+<pre><code>  et
+
+  &gt; ✔ build theme font
+  &gt; ✔ build element theme
+</code></pre><p>引入自定义主题</p>
+<p>默认情况下编译的主题目录是放在 <code>./theme</code> 下，你可以通过 <code>-o</code> 参数指定打包目录。像引入默认主题一样，在代码里直接引用 <code>theme/index.css</code> 文件即可。</p>
+<pre><code>  import &#39;../theme/index.css&#39;
+  import ElementUI from &#39;element-ui&#39;
+  import Vue from &#39;vue&#39;
+
+  Vue.use(ElementUI)
+</code></pre><p>搭配插件按需引入组件主题
+如果是搭配 <code>babel-plugin-component</code> 一起使用，只需要修改 <code>.babelrc</code> 的配置，指定 <code>styleLibraryName</code> 路径为自定义主题相对于 <code>.babelrc</code> 的路径，注意要加 <code>~</code>。</p>
+<pre><code>  {
+    &quot;plugins&quot;: [
+      [
+        &quot;component&quot;,
+        {
+          &quot;libraryName&quot;: &quot;element-ui&quot;,
+          &quot;styleLibraryName&quot;: &quot;~theme&quot;
+        }
+      ]
+    ]
+  }
+</code></pre><ul>
+<li>iview</li>
+</ul>
+<p>变量覆盖（推荐）
+如果你的项目使用了 <code>webpack</code> 工程，可以通过变量覆盖的方式来实现主题定制。</p>
+<p>首先在项目中先建一个目录，比如 <code>my-theme</code>，然后在 <code>my-theme</code> 下建立一个 <code>less</code> 文件 <code>index.less</code>，并写入下面内容：</p>
+<pre><code>  @import &#39;~iview/src/styles/index.less&#39;;
+
+  // Here are the variables to cover, such as:
+  @primary-color: #8c0776;
+</code></pre><p>完整的变量列表可以查看 <a href="https://github.com/iview/iview/blob/2.0/src/styles/custom.less">默认样式变量</a>。</p>
+<p>然后在入口文件 <code>main.js</code> 内导入这个 <code>less</code> 文件即可：</p>
+<pre><code>  import Vue from &#39;vue&#39;;
+  import iView from &#39;iview&#39;;
+  import &#39;../my-theme/index.less&#39;;
+
+  Vue.use(iView);
+</code></pre><p>通过安装工具修改 #
+如果没有使用 webpack，可以用我们提供的工具 <a href="https://github.com/iview/iview-theme">iview-theme</a> 来编译。</p>
+<p>首先需要安装主题生成工具，从 npm 全局或在项目中局部安装，以全局安装为例：</p>
+<pre><code>  npm install iview-theme -g
+</code></pre><p>然后在业务工程里新建一个目录，用来存放主题文件，使用下面的命令初始化主题，这时会从 iView 仓库拉取最新的样式文件：</p>
+<pre><code>  iview-theme init my-theme
+</code></pre><p>如需拉取指定版本号的 iView，使用下面的命令。（实际运行下面命令时，需将 xxx 替换成项目所使用的 iView 版本，如 “ v2.14.3 ”）</p>
+<pre><code>  iview-theme init my-theme xxx
+</code></pre><p>最后编辑 <code>my-theme/custom.less</code> 文件，用命令编译即可：</p>
+<pre><code>  cd my-theme
+  iview-theme build -o dist/
+</code></pre><p>最终会在指定的目录下编译为 <code>iview.css</code> 的文件，只需在入口处引用它就可以了，比如在 main.js 文件：</p>
+<pre><code>  import Vue from &#39;vue&#39;;
+  import iView from &#39;iview&#39;;
+  import &#39;../my-theme/dist/iview.css&#39;;
+
+  Vue.use(iView);
+</code></pre><blockquote>
+<p>注意：在更新 iView 后，应该重新拉取。</p>
+</blockquote>
+<ul>
+<li>antd</li>
+</ul>
+<p>antd 的样式使用了 Less 作为开发语言，并定义了一系列全局/组件的样式变量，你可以根据需求进行相应调整。</p>
+<p>以下是一些最常用的通用变量，所有样式变量可以在 <a href="https://github.com/vueComponent/ant-design-vue/blob/master/components/style/themes/default.less">这里</a> 找到。</p>
+<pre><code>  @primary-color: #1890ff;                         // 全局主色
+  @link-color: #1890ff;                            // 链接色
+  @success-color: #52c41a;                         // 成功色
+  @warning-color: #faad14;                         // 警告色
+  @error-color: #f5222d;                           // 错误色
+  @font-size-base: 14px;                           // 主字号
+  @heading-color: rgba(0, 0, 0, .85);              // 标题色
+  @text-color: rgba(0, 0, 0, .65);                 // 主文本色
+  @text-color-secondary : rgba(0, 0, 0, .45);      // 次文本色
+  @disabled-color : rgba(0, 0, 0, .25);            // 失效色
+  @border-radius-base: 4px;                        // 组件/浮层圆角
+  @border-color-base: #d9d9d9;                     // 边框色
+  @box-shadow-base: 0 2px 8px rgba(0, 0, 0, .15);  // 浮层阴影
+</code></pre><p>定制方式
+我们使用 <a href="http://lesscss.org/usage/#using-less-in-the-browser-modify-variables">modifyVars</a> 的方式来进行覆盖变量。
+下面将针对不同的场景提供一些常用的定制方式。</p>
+<p>在 <code>webpack</code> 中定制主题
+我们以 webpack@4 为例进行说明，以下是一个 <code>webpack.config.js</code> 的典型例子，对 <a href="https://github.com/webpack-contrib/less-loader">less-loader</a> 的 options 属性进行相应配置。</p>
+<pre><code>  // webpack.config.js
+  module.exports = {
+    rules: [{
+      test: /\.less$/,
+      use: [{
+        loader: &#39;style-loader&#39;,
+      }, {
+        loader: &#39;css-loader&#39;, // translates CSS into CommonJS
+      }, {
+        loader: &#39;less-loader&#39;, // compiles Less to CSS
+  +     options: {
+  +       modifyVars: {
+  +         &#39;primary-color&#39;: &#39;#1DA57A&#39;,
+  +         &#39;link-color&#39;: &#39;#1DA57A&#39;,
+  +         &#39;border-radius-base&#39;: &#39;2px&#39;,
+  +       },
+  +       javascriptEnabled: true,
+  +     },
+      }],
+      // ...other rules
+    }],
+    // ...other config
+  }
+</code></pre><p>注意 less-loader 的处理范围不要过滤掉 <code>node_modules</code> 下的 antd 包。</p>
+<p>在 vue cli 2中定制主题</p>
+<p>修改<code>build/utils.js</code>文件</p>
+<pre><code>  // build/utils.js
+  - less: generateLoaders(&#39;less&#39;),
+  + less: generateLoaders(&#39;less&#39;, {
+  +   modifyVars: {
+  +     &#39;primary-color&#39;: &#39;#1DA57A&#39;,
+  +     &#39;link-color&#39;: &#39;#1DA57A&#39;,
+  +     &#39;border-radius-base&#39;: &#39;2px&#39;,
+  +   },
+  +   javascriptEnabled: true,
+  + }),
+</code></pre><p>在 vue cli 3中定制主题
+项目更目录下新建文件<code>vue.config.js</code></p>
+<pre><code>  // vue.config.js
+  module.exports = {
+    css: {
+      loaderOptions: {
+        less: {
+          modifyVars: {
+            &#39;primary-color&#39;: &#39;#1DA57A&#39;,
+            &#39;link-color&#39;: &#39;#1DA57A&#39;,
+            &#39;border-radius-base&#39;: &#39;2px&#39;,
+          },
+          javascriptEnabled: true
+        }
+      }
+    }
+  }
+</code></pre><p>配置 less 变量文件</p>
+<p>另外一种方式是建立一个单独的 <code>less</code> 变量文件，引入这个文件覆盖 <code>antd.less</code> 里的变量。</p>
+<pre><code>  __at__import &quot;~ant-design-vue/dist/antd.less&quot;;   // 引入官方提供的 less 样式入口文件
+  __at__import &quot;your-theme-file.less&quot;;   // 用于覆盖上面定义的变量
+</code></pre><p>注意，这种方式已经载入了所有组件的样式，不需要也无法和按需加载插件 <code>babel-plugin-import</code> 的 <code>style</code> 属性一起使用。</p>
+<p>没有生效？</p>
+<p>注意样式必须加载 less 格式，一个常见的问题就是引入了多份样式，less 的样式被 css 的样式覆盖了。</p>
+<p>如果你在使用 <a href="https://github.com/ant-design/babel-plugin-import">babel-plugin-import</a> 的 style 配置来引入样式，需要将配置值从 <code>&#39;css&#39;</code> 改为 <code>true</code>，这样会引入 less 文件。</p>
+<p>如果你是通过 <code>&#39;ant-design-vue/dist/antd.css&#39;</code> 引入样式的，改为 <code>ant-design-vue/dist/antd.less</code>。</p>
+<h3 id="-">其他</h3>
+<h4 id="-">对设计人员</h4>
+<ol>
+<li><p>Antd
+<code>Ant Design Vue</code> 相关设计资源和设计工具的下载</p>
+<blockquote>
+<p>以下设计资源由<a href="https://ant.design/">Ant Design</a>官方开发并维护</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/antd-d.png" alt="image"></p>
+</li>
+<li><p>Element</p>
+<p><img src="https://raw.githubusercontent.com/HankBass/front-end-UI-comparison/master/images/el-d.png" alt="image"></p>
+</li>
+<li><p>iview
+暂无</p>
+</li>
+</ol>
+<p><code>vue-antd</code>早在Vue1.x的时候曾经活跃过，但后期却停止维护了，<code>Ant Design Vue</code>是Ant Design 的Vue实现 ；</p>
+<p><code>iview</code> 的UI 源自 <code>AntDesign</code>，得益于近些年Vue发展的势头迅猛，iview的社区生态目前也比较庞大，对大部分的项目都能够提供较为完善的解决方案；</p>
+<p><code>Element</code> 的开发团队和用户群体在目前都是三者之中最庞大的，发展也是稳步前进。</p>
+<blockquote>
+<p><code>Element</code>更倾向于给开发者提供各种各样的原材料，你可以更加自由地创造，但过程可能略微繁琐；</p>
+</blockquote>
+<blockquote>
+<p><code>iview</code>则把材料进行了二次加工，更加方便大部分人的使用，但是在某种程度上，它的自由度可能没有<code>Element</code>那么高；</p>
+</blockquote>
+<blockquote>
+<p><code>Ant Design</code>是<code>React</code>社区中最受欢迎的UI框架(彩蛋事件之前)，如果你是一名<code>React</code>开发者，可以多点关注，如果你只是喜欢<code>Ant Design</code>的UI风格，那也许可以留意下<code>iview</code>看看。</p>
+</blockquote>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>
